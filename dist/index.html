@@ -2,7 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Yew App</title>
+        <title>dad jokes</title>
+        <link rel="stylesheet" href="style.css">
     <link rel="modulepreload" href="/dadjoke-9fba9cc149c2051b.js" crossorigin="anonymous" integrity="sha384-CiKH/Ng7QJ23ATlo8KN22eLQrv3PCSNMjZy/Mut36nRMmkOLfrH7p1kZr+Nbir0B"><link rel="preload" href="/dadjoke-9fba9cc149c2051b_bg.wasm" crossorigin="anonymous" integrity="sha384-oOzcDu+ki/7qhloc8Sa+WrxfhGYRs61HBD1gumwSB2e2RFtIVYfM23K04W2P+jTl" as="fetch" type="application/wasm"></head>
     <body>
 <script type="module">
@@ -146,87 +147,4 @@ dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
 })()
 </script></body>
 </html>
-<style>
-/* Overall container for centering content */
-div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(45deg, #ff7e5f, #feb47b);
-    font-family: 'Arial', sans-serif;
-}
 
-/* Fancy button styling */
-button {
-    background: #4CAF50;
-    color: white;
-    border: none;
-    padding: 20px 40px;
-    font-size: 18px;
-    font-weight: bold;
-    text-transform: uppercase;
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-    outline: none;
-}
-
-.fancy-button:hover {
-    background: #45a049;
-    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3);
-    transform: translateY(-5px);
-}
-
-.fancy-button:active {
-    background: #388e3c;
-    transform: translateY(2px);
-}
-
-/* Joke content styling */
-p {
-    margin-top: 30px;
-    padding: 15px;
-    font-size: 24px;
-    color: #333;
-    text-align: center;
-    max-width: 600px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 15px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s forwards;
-}
-
-/* Keyframes for content fade-in animation */
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Make text even fancier with slight rotation */
-p {
-    font-family: 'Courier New', Courier, monospace;
-    font-style: italic;
-    animation: rotateText 3s infinite alternate;
-}
-
-@keyframes rotateText {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(5deg);
-    }
-}
-
-</style>
