@@ -1,0 +1,58 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(45deg, #3b82f6, #9b4dca); /* Epic gradient background */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+div {
+  background-color: white;
+  border-radius: 20px;
+  padding: 40px 50px;
+  text-align: center;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+}
+
+button {
+  background-color: #4f46e5;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 15px 30px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #4338ca;
+    transform: scale(1.1);
+}
+
+p {
+    margin-top: 25px;
+    font-size: 22px;
+    font-style: italic;
+    color: #4b5563;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+/* Additional epic glow for the button */
+button:focus {
+    outline: none;
+    box-shadow: 0 0 20px rgba(72, 85, 99, 0.8);
+}
