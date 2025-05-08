@@ -28,9 +28,15 @@ fn App() -> Html {
     };
 
     html! {
-        <div>
-            <button {onclick}>{ "tell a dad joke" }</button>
-            <p>{ *(&dad_joke_content.clone().as_str()) }</p>
+        <div class={classes!("flex", "justify-center", "items-center", "h-screen", "bg-gradient-to-r", "from-blue-500", "to-purple-600")}>
+            <div class={classes!("text-center", "p-6", "rounded-lg", "bg-white", "shadow-lg", "max-w-md", "w-full")}>
+                <button {onclick} class={classes!("bg-indigo-600", "text-white", "font-semibold", "py-2", "px-6", "rounded-lg", "shadow-lg", "hover:bg-indigo-700", "transition", "duration-300", "transform", "hover:scale-105")}>
+                    {"Tell a Dad Joke"}
+                </button>
+                <p class={classes!("mt-6", "text-xl", "text-gray-800", "font-medium", "italic")}>
+                    { &*dad_joke_content.clone() }
+                </p>
+            </div>
         </div>
     }
 }
