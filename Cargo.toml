@@ -1,0 +1,10 @@
+[package]
+name = "dadjoke"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+once_cell = "1.21.3"
+reqwest = "0.12.15"
+wasm-bindgen-futures = "0.4.50"
+yew = { version = "0.21.0", features = ["csr"] }
