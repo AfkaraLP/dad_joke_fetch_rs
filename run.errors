@@ -1,0 +1,2 @@
+strace: must have PROG [ARGS] or -p PID
+Try 'strace -h' for more information.

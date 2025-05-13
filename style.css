@@ -1,58 +1,244 @@
-/* General reset */
+/* Cosmic Chaos Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* filter: drop-shadow(0 0 1px rgba(255,255,255,0.1));*/
 }
 
-body {
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(45deg, #3b82f6, #9b4dca); /* Epic gradient background */
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-div {
-  background-color: white;
-  border-radius: 20px;
-  padding: 40px 50px;
-  text-align: center;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-  max-width: 400px;
+html, body {
+  height: 100%;
   width: 100%;
+  font-family: 'Orbitron', monospace;
+  background: radial-gradient(ellipse at center, #0a001a 0%, #000000 100%);
+  overflow: hidden;
+  color: #fff;
 }
 
+/* Insane Starfield Background */
+body::before {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: 
+    radial-gradient(1px 1px at 50% 50%, #ffffffcc 100%, transparent 0),
+    radial-gradient(1px 1px at 20% 30%, #ffffffaa 100%, transparent 0),
+    radial-gradient(1px 1px at 80% 70%, #ffffffaa 100%, transparent 0);
+  background-size: 100px 100px;
+  animation: twinkle 4s infinite linear, moveStars 60s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.05;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.05; }
+  50% { opacity: 0.15; }
+}
+
+@keyframes moveStars {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(20px, 20px); }
+}
+
+/* Liquid Distortion Overlay */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-radial-gradient(circle, rgba(0,255,255,0.05) 0, rgba(0,255,255,0.02) 100px);
+  animation: liquid 10s linear infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes liquid {
+  0% { transform: rotate(0deg) scale(1); }
+  100% { transform: rotate(360deg) scale(1.2); }
+}
+
+/* Container Madness */
+div > div {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 25px;
+  border: 4px solid transparent;
+  padding: 2rem;
+  text-align: center;
+  backdrop-filter: blur(15px) saturate(200%);
+  z-index: 2;
+  position: relative;
+  animation: floatContainer 8s infinite ease-in-out, pulseBorder 3s infinite alternate;
+  box-shadow: 
+    0 0 20px rgba(0, 255, 255, 0.4),
+    inset 0 0 10px rgba(0, 255, 255, 0.2);
+  background-clip: padding-box;
+  border-image: 
+    linear-gradient(45deg, #ff00cc, #3333ff, #00ffff, #ff00cc) 1;
+}
+
+/* Animated Rainbow Border */
+@keyframes pulseBorder {
+  0% { border-color: #ff00cc; }
+  25% { border-color: #3333ff; }
+  50% { border-color: #00ffff; }
+  75% { border-color: #ff00cc; }
+  100% { border-color: #3333ff; }
+}
+
+/* Floating Container */
+@keyframes floatContainer {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(0.5deg); }
+}
+
+/* Glitch Button */
 button {
-  background-color: #4f46e5;
-  color: white;
-  font-size: 16px;
+  position: relative;
+  padding: 1.2rem 2.8rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  padding: 15px 30px;
-  border-radius: 8px;
+  color: #fff;
+  background: linear-gradient(45deg, #00ffcc, #6600ff, #00ccff);
+  background-size: 400% 400%;
   border: none;
+  border-radius: 50px;
   cursor: pointer;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 
+    0 0 15px #00ffcc,
+    0 0 25px #6600ff,
+    0 0 40px #00ccff;
+  animation: neonGlow 2s infinite alternate, shimmer 5s linear infinite;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
+button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 500%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.2) 100%);
+  transform: skewX(-20deg);
+  animation: shine 3s infinite;
+}
+
+/* Button Shine */
+@keyframes shine {
+  0% { left: -75%; }
+  100% { left: 125%; }
+}
+
+/* Neon Glow Animation */
+@keyframes neonGlow {
+  from {
+    box-shadow: 0 0 10px #00ffcc, 0 0 20px #6600ff, 0 0 30px #00ccff;
+  }
+  to {
+    box-shadow: 0 0 20px #00ffcc, 0 0 30px #6600ff, 0 0 50px #00ccff;
+  }
+}
+
+/* Button Hover Glitch */
 button:hover {
-    background-color: #4338ca;
-    transform: scale(1.1);
+  animation: glitch 0.5s infinite, neonGlow 0.5s infinite;
+  transform: scale(1.1) rotate(1deg);
+  box-shadow: 
+    0 0 30px #00ffcc,
+    0 0 50px #6600ff,
+    0 0 70px #00ccff;
 }
 
+@keyframes glitch {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(-2px, 2px) rotate(-1deg); }
+  50% { transform: translate(2px, -2px) rotate(1deg); }
+  75% { transform: translate(-1px, 1px) rotate(-0.5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* Joke Text Madness */
 p {
-    margin-top: 25px;
-    font-size: 22px;
-    font-style: italic;
-    color: #4b5563;
-    line-height: 1.6;
-    font-weight: 500;
+  margin-top: 1.5rem;
+  font-size: 1.4rem;
+  color: #00ffff;
+  text-shadow: 
+    0 0 5px #00ffff,
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    0 0 40px #00ffff;
+  font-style: italic;
+  animation: floatText 4s infinite ease-in-out, rainbowText 10s linear infinite;
 }
 
-/* Additional epic glow for the button */
-button:focus {
-    outline: none;
-    box-shadow: 0 0 20px rgba(72, 85, 99, 0.8);
+/* Joke Text Float */
+@keyframes floatText {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Joke Text Rainbow */
+@keyframes rainbowText {
+  0% { color: #00ffff; text-shadow: 0 0 10px #00ffff; }
+  25% { color: #ff00cc; text-shadow: 0 0 10px #ff00cc; }
+  50% { color: #3333ff; text-shadow: 0 0 10px #3333ff; }
+  75% { color: #00ffcc; text-shadow: 0 0 10px #00ffcc; }
+  100% { color: #00ffff; text-shadow: 0 0 10px #00ffff; }
+}
+
+/* Light Beam Overlay */
+body::after {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 50% 30%, rgba(0,255,255,0.1), transparent 70%);
+  animation: rotateBeam 60s linear infinite;
+  z-index: 1;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+@keyframes rotateBeam {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Audio Glitch FX (requires HTML tweaks, but CSS-only hack) */
+button:hover::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  /* Optional: use JS for real audio, but CSS can't trigger sound */
+}
+
+/* Insane Loading Animation */
+@keyframes loading {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Final Touch: Make everything vibrate */
+html {
+  animation: vibration 0.1s infinite;
+}
+
+@keyframes vibration {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(1px, -1px); }
+  50% { transform: translate(-1px, 1px); }
+  75% { transform: translate(1px, 1px); }
+  100% { transform: translate(0, 0); }
 }
