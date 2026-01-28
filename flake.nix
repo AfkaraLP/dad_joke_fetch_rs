@@ -32,7 +32,7 @@
             (
               rust-bin.selectLatestNightlyWith (toolchain: toolchain.default.override {
                 extensions = [ "rust-src" "rustfmt-preview" "clippy-preview" ];
-                targets = [ "arm-unknown-linux-gnueabihf" ];
+                targets = [ "arm-unknown-linux-gnueabihf" "wasm32-unknown-unknown" ];
               })
             )
           ];
