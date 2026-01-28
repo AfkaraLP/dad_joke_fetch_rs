@@ -26,6 +26,7 @@
             lld
             eza
             fd
+            trunk
             wasm-pack
             wasm-bindgen-cli
             (
